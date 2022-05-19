@@ -9,10 +9,12 @@ import invoiceproject.controller.Controller;
 import invoiceproject.model.Invoice;
 import invoiceproject.model.InvoicesTableModel;
 import java.awt.Label;
+import java.awt.TextField;
 import java.util.ArrayList;
 import javax.swing.JDialog;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+
 
 /**
  *
@@ -45,6 +47,17 @@ public class InvoiceFrame extends javax.swing.JFrame {
         createInvoiceCancel.addActionListener(controller);
         okButton = new javax.swing.JButton();
         okButton.addActionListener(controller);
+        itemDialog = new javax.swing.JDialog();
+        label5 = new java.awt.Label();
+        label6 = new java.awt.Label();
+        label7 = new java.awt.Label();
+        textField1 = new java.awt.TextField();
+        textField2 = new java.awt.TextField();
+        textField3 = new java.awt.TextField();
+        createItemOK = new java.awt.Button();
+        createItemOK.addActionListener(controller);
+        createItemCancel = new java.awt.Button();
+        createItemCancel.addActionListener(controller);
         jScrollPane1 = new javax.swing.JScrollPane();
         invoiceTable = new javax.swing.JTable();
         invoiceTable.getSelectionModel().addListSelectionListener(controller);
@@ -85,10 +98,10 @@ public class InvoiceFrame extends javax.swing.JFrame {
         jLabel3.setText("Customer Name");
 
         createInvoiceCancel.setText("Cancle");
-        createInvoiceCancel.setActionCommand("createInvoiceCancel");
+        createInvoiceCancel.setActionCommand("Create Invoice Cancel");
 
         okButton.setText("OK");
-        okButton.setActionCommand("createInvoiceOK");
+        okButton.setActionCommand("create Invoice OK");
 
         javax.swing.GroupLayout invDialogLayout = new javax.swing.GroupLayout(invDialog.getContentPane());
         invDialog.getContentPane().setLayout(invDialogLayout);
@@ -101,11 +114,11 @@ public class InvoiceFrame extends javax.swing.JFrame {
                 .addComponent(createInvoiceCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(invDialogLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(invDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 405, Short.MAX_VALUE)
+                .addGap(23, 23, 23)
+                .addGroup(invDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 363, Short.MAX_VALUE)
                 .addGroup(invDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -119,14 +132,78 @@ public class InvoiceFrame extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(invDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                .addGroup(invDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addGroup(invDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(createInvoiceCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
+        );
+
+        itemDialog.setTitle("Create New Item");
+        itemDialog.setLocation(new java.awt.Point(250, 150));
+        itemDialog.setSize(new java.awt.Dimension(450, 250));
+
+        label5.setText("Item Name");
+
+        label6.setText("Item Count");
+
+        label7.setText("Item Price");
+
+        createItemOK.setActionCommand("Create Item OK");
+        createItemOK.setLabel("OK");
+
+        createItemCancel.setActionCommand("Create Item Cancel");
+        createItemCancel.setLabel("Cancel");
+
+        javax.swing.GroupLayout itemDialogLayout = new javax.swing.GroupLayout(itemDialog.getContentPane());
+        itemDialog.getContentPane().setLayout(itemDialogLayout);
+        itemDialogLayout.setHorizontalGroup(
+            itemDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(itemDialogLayout.createSequentialGroup()
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addGroup(itemDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, itemDialogLayout.createSequentialGroup()
+                        .addComponent(createItemOK, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                        .addComponent(createItemCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, itemDialogLayout.createSequentialGroup()
+                        .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, itemDialogLayout.createSequentialGroup()
+                        .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, itemDialogLayout.createSequentialGroup()
+                        .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        itemDialogLayout.setVerticalGroup(
+            itemDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(itemDialogLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(itemDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textField1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                    .addComponent(label5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(itemDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(label6, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(itemDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(label7, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                    .addComponent(textField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(itemDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(createItemOK, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(createItemCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -309,6 +386,8 @@ public class InvoiceFrame extends javax.swing.JFrame {
     private javax.swing.JButton createInvoiceButton;
     private javax.swing.JButton createInvoiceCancel;
     private javax.swing.JButton createItemButton;
+    private java.awt.Button createItemCancel;
+    private java.awt.Button createItemOK;
     private java.awt.Label customerNameLabel;
     private javax.swing.JButton deleteInvoiceButton;
     private javax.swing.JButton deleteItemButton;
@@ -317,6 +396,7 @@ public class InvoiceFrame extends javax.swing.JFrame {
     private java.awt.Label invoiceNumLabel;
     private javax.swing.JTable invoiceTable;
     private java.awt.Label invoiceTotalLabel;
+    private javax.swing.JDialog itemDialog;
     private javax.swing.JTable itemsTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -331,9 +411,15 @@ public class InvoiceFrame extends javax.swing.JFrame {
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
+    private java.awt.Label label5;
+    private java.awt.Label label6;
+    private java.awt.Label label7;
     private javax.swing.JMenuItem loadFileMenuItem;
     private javax.swing.JButton okButton;
     private javax.swing.JMenuItem saveFileMenuItem;
+    private java.awt.TextField textField1;
+    private java.awt.TextField textField2;
+    private java.awt.TextField textField3;
     // End of variables declaration//GEN-END:variables
 
 private ArrayList<Invoice> invoices;
@@ -407,6 +493,25 @@ private InvoicesTableModel invoicesTableModel;
     
     public JTextField getCustNameField() {
         return jTextField2;
+    }
+
+    public JDialog getItemDialog() {
+        return itemDialog;
+    }
+
+    public void setItemDialog(JDialog itemDialog) {
+        this.itemDialog = itemDialog;
+    }
+    public TextField getItemNameField() {
+        return textField1;
+    }
+
+    public TextField getItemCountField() {
+        return textField2;
+    }
+
+    public TextField getItemPriceField() {
+        return textField3;
     }
 
 }
