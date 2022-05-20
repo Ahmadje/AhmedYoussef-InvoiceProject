@@ -121,7 +121,7 @@ public class Controller implements ActionListener, ListSelectionListener {
                                 break;
                             }
                         }
-                        Items item = new Items(invoiceNum, itemName, itemPrice, count, inv);
+                        Items item = new Items(itemName, itemPrice, count, inv);
                         inv.getItems().add(item);
                     }
 //                    System.out.println("Check#2");
@@ -212,14 +212,12 @@ public class Controller implements ActionListener, ListSelectionListener {
     private void createInvoiceOK() {
         String date = frame.getInvDateField().getText();
         String customer = frame.getCustNameField().getText();
-        int num = frame.getNextInvoiceNum();
-        
+        int num = frame.getNextInvoiceNum();        
         Invoice invoice = new Invoice(num, date, customer);
-        frame.getInvoices().add(invoice);       
+        frame.getInvoices().add(invoice); 
         frame.getInvoicesTableModel().fireTableDataChanged();
         frame.getInvDialog().setVisible(false);
         frame.getInvDialog().dispose();
-        frame.setInvDialog(null);
     }
 
     private void createItemOK() {
@@ -231,7 +229,7 @@ public class Controller implements ActionListener, ListSelectionListener {
         int selectedInvoice = frame.getInvoiceTable().getSelectedRow();
         if (selectedInvoice != -1){
             Invoice invoice = frame.getInvoices().get(selectedInvoice);
-            Items items = new Items(selectedInvoice, item , price, count, invoice);
+            Items items = new Items(item , price, count, invoice);
             invoice.getItems().add(items);
             ItemsTableModel itemsTableModel = new ItemsTableModel(invoice.getItems());
             frame.getItemsTable().setModel(itemsTableModel);
@@ -239,8 +237,7 @@ public class Controller implements ActionListener, ListSelectionListener {
             frame.getInvoicesTableModel().fireTableDataChanged();
         }                        
         frame.getItemDialog().setVisible(false);
-        frame.getItemDialog().dispose();
-        frame.setItemDialog(null);
+        frame.getItemDialog().dispose();       
     }
 
     private void createItemCancel() {

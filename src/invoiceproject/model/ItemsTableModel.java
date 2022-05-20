@@ -13,6 +13,10 @@ public class ItemsTableModel extends AbstractTableModel {
     public ItemsTableModel(ArrayList<Items> items) {
         this.items = items;
     }
+
+    public ItemsTableModel(Invoice invoice) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     @Override
     public int getRowCount() {
@@ -34,7 +38,7 @@ public class ItemsTableModel extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         Items item = items.get(rowIndex);
         switch (columnIndex){
-            case 0: return item.getNum();
+            case 0: return item.getInvoice().getNum();
             case 1: return item.getItems();
             case 2: return item.getPrice();
             case 3: return item.getCount();

@@ -3,7 +3,6 @@ package invoiceproject.model;
 
 
 public class Items {
-    private int num;
     private String item;
     private double price;
     private int count;
@@ -13,8 +12,7 @@ public class Items {
     }
 
         
-    public Items(int num, String item, double price, int count, Invoice invoice) {
-        this.num = num;
+    public Items(String item, double price, int count, Invoice invoice) {        
         this.item = item;
         this.price = price;
         this.count = count;
@@ -27,14 +25,6 @@ public class Items {
 
     public void setCount(int count) {
         this.count = count;
-    }
-
-    public int getNum() {
-        return num;
-    }
-
-    public void setNum(int num) {
-        this.num = num;
     }
 
     public String getItems() {
@@ -52,6 +42,10 @@ public class Items {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public Invoice getInvoice() {
+        return invoice;
+    }
     
     public double getItemTotal(){
     return price*count;
@@ -59,10 +53,10 @@ public class Items {
 
     @Override
     public String toString() {
-        return "Items{" + "num=" + num + ", item=" + item + ", price=" + price + ", count=" + count + '}';
+        return "Items{" + "num=" + invoice.getNum() + ", item=" + item + ", price=" + price + ", count=" + count + '}';
     }
     
     public String getAsCSV() {
-        return num + "," + item + "," + price + "," + count;
+        return invoice.getNum() + "," + item + "," + price + "," + count;
     }
 }

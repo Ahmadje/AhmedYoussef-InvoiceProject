@@ -283,8 +283,8 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="invoiceNumLabel" min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="invoiceDateLabel" min="-2" pref="263" max="-2" attributes="0"/>
-                          <Component id="invoiceTotalLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="customerNameLabel" min="-2" pref="263" max="-2" attributes="0"/>
+                          <Component id="invoiceTotalLabel" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -427,24 +427,12 @@
       </Properties>
     </Component>
     <Component class="java.awt.Label" name="invoiceNumLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="label7"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="invoiceDateLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="label8"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="customerNameLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="label9"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="invoiceTotalLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="label10"/>
-      </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>
