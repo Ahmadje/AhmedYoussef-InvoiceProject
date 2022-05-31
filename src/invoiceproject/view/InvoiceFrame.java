@@ -501,5 +501,5 @@ private InvoicesTableModel invoicesTableModel;
 
     public TextField getItemPriceField() {
         return textField3;
-    }
+    } 
 }

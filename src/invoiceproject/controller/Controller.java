@@ -206,7 +206,9 @@ public class Controller implements ActionListener, ListSelectionListener {
 
     private void createInvoiceCancel() {
         frame.getInvDialog().setVisible(false);
-        frame.getInvDialog().dispose();       
+        frame.getInvDialog().dispose();
+        frame.getInvDateField().setText(null);
+        frame.getCustNameField().setText(null);
     }
 
     private void createInvoiceOK() {
@@ -218,6 +220,8 @@ public class Controller implements ActionListener, ListSelectionListener {
         frame.getInvoicesTableModel().fireTableDataChanged();
         frame.getInvDialog().setVisible(false);
         frame.getInvDialog().dispose();
+        frame.getInvDateField().setText(null);
+        frame.getCustNameField().setText(null);     
     }
 
     private void createItemOK() {
@@ -235,13 +239,21 @@ public class Controller implements ActionListener, ListSelectionListener {
             frame.getItemsTable().setModel(itemsTableModel);
             itemsTableModel.fireTableDataChanged();
             frame.getInvoicesTableModel().fireTableDataChanged();
+            
         }                        
         frame.getItemDialog().setVisible(false);
-        frame.getItemDialog().dispose();       
+        frame.getItemDialog().dispose();
+        frame.getItemNameField().setText(null);
+        frame.getItemCountField().setText(null);
+        frame.getItemPriceField().setText(null);
+              
     }
 
     private void createItemCancel() {
         frame.getItemDialog().setVisible(false);
         frame.getItemDialog().dispose(); 
+        frame.getItemNameField().setText(null);
+        frame.getItemCountField().setText(null);
+        frame.getItemPriceField().setText(null);
     }
 }
